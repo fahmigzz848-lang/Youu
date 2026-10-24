@@ -4,36 +4,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("success-modal");
     const btnClose = document.getElementById("btn-close");
 
-    // Ketika klik "Mau Banget!" -> Efek Confetti dari bawah dulu, baru Pop-up muncul
+    // Ketika klik "Mau Banget!" -> Munculkan pop-up dan efek Confetti dari bawah
     btnYes.addEventListener("click", () => {
-        
-        // Picu Confetti dari sudut bawah kiri
-        window.confetti({
-            particleCount: 100,
+        modal.classList.remove("hidden");
+
+        // Konfigurasi Confetti dari sudut bawah kiri
+        confetti({
+            particleCount: 80,
             angle: 60,
-            spread: 70,
+            spread: 60,
             origin: { x: 0, y: 1 },
-            zIndex: 99999 // Diatur sangat tinggi agar berada di depan modal teratas
+            zIndex: 9999 // Memastikan efek confetti muncul di atas kartu tapi tidak memblokir tombol setelahnya
         });
 
-        // Picu Confetti dari sudut bawah kanan
-        window.confetti({
-            particleCount: 100,
+        // Konfigurasi Confetti dari sudut bawah kanan
+        confetti({
+            particleCount: 80,
             angle: 120,
-            spread: 70,
+            spread: 60,
             origin: { x: 1, y: 1 },
-            zIndex: 99999
+            zIndex: 9999
         });
-
-        // Berikan jeda sedikit (300ms) sebelum menampilkan modal agar confetti terlihat meluncur bebas
-        setTimeout(() => {
-            modal.classList.remove("hidden");
-        }, 300);
     });
 
     // Trik interaktif: Tombol "Nanti Deh..." akan menghindar saat didekati/diklik
     const moveButton = (e) => {
-        if (e.type === "click" || e.type === "touchstart") {
+        // Cegah aksi default jika di perangkat sentuh agar tidak macet
+        if (e.type === "click") {
             e.preventDefault();
         }
         
