@@ -1,3 +1,4 @@
+<script>
 document.addEventListener("DOMContentLoaded", () => {
     const btnYes = document.getElementById("btn-yes");
     const btnNo = document.getElementById("btn-no");
@@ -29,6 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
   
-    </script>
+</script>
 
     
