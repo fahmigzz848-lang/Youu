@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hai Teman Lama! Let's Reconnect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Polkadot -->
+    <div class="polkadot-bg"></div>
+
+    <div class="container">
+        <!-- Kartu Utama -->
+        <main class="card animate-fade-in">
+            <header class="header-section">
+                <span class="emoji-icon">👋</span>
+                <h1>Halo, Apa Kabar?</h1>
+                <p class="subtitle">Sudah lama banget ya kita gak ngobrol...</p>
+            </header>
+
+            <!-- Bagian Pesan/Nostalgia -->
+            <section class="message-section">
+                <p>Tiba-tiba aku ingat keseruan kita dulu. Banyak hal yang berubah, tapi kenangan bareng kamu selalu punya tempat spesial.</p>
+                <p>Daripada cuma lewat media sosial, gimana kalau kita luangkan waktu buat ngobrol santai lagi? Entah itu lewat telepon, video call, atau kopi darat.</p>
+            </section>
+
+            <!-- Bagian Interaktif / CTA -->
+            <footer class="action-section">
+                <p class="question">Mau kan sambung silaturahmi lagi?</p>
+                <div class="btn-group">
+                    <button id="btn-yes" class="btn btn-primary">Mau Banget! ✨</button>
+                    <button id="btn-no" class="btn btn-secondary">Nanti Deh...</button>
+                </div>
+            </footer>
+        </main>
+
+        <!-- Pop-up Sukses (Tersembunyi Awalnya) -->
+        <div id="success-modal" class="modal hidden">
+            <div class="modal-content">
+                <h2>Asyik! Nggak Sabar Nyambung Lagi! ☕</h2>
+                <p>Kirim pesan ke aku ya, yuk kita atur jadwal luang kita.</p>
+                <button id="btn-close" class="btn btn-primary">Siap!</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
