@@ -4,14 +4,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("success-modal");
     const btnClose = document.getElementById("btn-close");
 
-    // Ketika klik "Mau Banget!" -> Munculkan pop-up
+    // Ketika klik "Mau Banget!" -> Munculkan pop-up dan kejutan Confetti dari bawah
     btnYes.addEventListener("click", () => {
+        // Tampilkan modal pop-up
         modal.classList.remove("hidden");
+
+        // Konfigurasi Confetti dari sudut bawah kiri
+        confetti({
+            particleCount: 100,
+            angle: 60,
+            spread: 70,
+            origin: { x: 0, y: 1 } // Kiri bawah
+        });
+
+        // Konfigurasi Confetti dari sudut bawah kanan
+        confetti({
+            particleCount: 100,
+            angle: 120,
+            spread: 70,
+            origin: { x: 1, y: 1 } // Kanan bawah
+        });
     });
 
-    // Trik interaktif: Tombol "Nanti Deh..." akan menghindar saat didekati (desktop) atau diklik (mobile)
+    // Trik interaktif: Tombol "Nanti Deh..." akan menghindar saat didekati/diklik
     const moveButton = () => {
-        // Menghitung batas area aman agar tombol tidak keluar layar jauh
         const x = Math.random() * (window.innerWidth - btnNo.offsetWidth - 40);
         const y = Math.random() * (window.innerHeight - btnNo.offsetHeight - 40);
         
@@ -26,8 +42,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // Menutup Modal Sukses
     btnClose.addEventListener("click", () => {
         modal.classList.add("hidden");
-        
-        // OPSIONAL: Kamu bisa mengarahkan otomatis ke WhatsApp kamu dengan membuka tanda komentar (//) di bawah:
-        // window.location.href = "https://wa.me"; 
     });
 });
